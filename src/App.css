@@ -45,7 +45,7 @@ body {
   width: 700px;
   margin-bottom: 10px;
   border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 4px #ffffff15;
   border: 2px solid #ffffff36;
   transition: ease-in-out 0.2s !important;
 }
@@ -54,6 +54,7 @@ body {
 }
 .first-place {
   border-color: gold;
+  box-shadow: 0px 2px 4px gold;
   scale: 1.03;
 }
 .first-place:hover {
@@ -64,9 +65,11 @@ body {
   scale: 1.02;
 }
 .third-place {
+  box-shadow: 0px 2px 4px brown;
   border-color: brown;
 }
 .second-place {
+  box-shadow: 0px 2px 4px silver;
   border-color: silver;
 }
 .second-place:hover,
