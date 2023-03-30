@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+body {
+  background-color: #333333;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.header {
+  width: 420px;
+  text-align: center;
+}
+
+.top {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 25px;
+  width: 700px;
+  margin-bottom: 10px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.leaderboard-row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #555555;
+  height: 25px;
+  width: 700px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: ease-in-out 0.2s !important;
+}
+.leaderboard-row:hover {
+  scale: 1.02;
+}
+.first-place {
+  scale: 1.03;
+}
+.first-place:hover {
+  scale: 1.05;
+}
+.second-place,
+.third-place {
+  scale: 1.02;
+}
+
+.second-place:hover,
+.third-place:hover {
+  scale: 1.04;
+}
+
+.leaderboard-rank,
+.leaderboard-name,
+.leaderboard-points {
+  width: 100%;
+  text-align: center;
+}
+.footer {
+  font-size: 12px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
