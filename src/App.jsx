@@ -5,7 +5,7 @@ function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
 
   useEffect(() => {
-    fetch('http://3.121.207.210:3000/leaderboard-data')
+    fetch('https://aws.pandadex.ml/leaderboard-data')
       .then(response => response.json())
       .then(data => setLeaderboardData(data))
       .catch(error => console.error(error));
