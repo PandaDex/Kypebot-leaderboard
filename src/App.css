@@ -51,10 +51,12 @@ body {
 }
 .leaderboard-row:hover {
   scale: 1.02;
+  border-color: #346bcf;
+  box-shadow: 0px 2px 4px #346bcf;
 }
 .first-place {
-  border-color: gold;
-  box-shadow: 0px 2px 4px gold;
+  border-color: gold !important;
+  box-shadow: 0px 2px 4px gold !important;
   scale: 1.03;
 }
 .first-place:hover {
@@ -65,12 +67,12 @@ body {
   scale: 1.02;
 }
 .third-place {
-  box-shadow: 0px 2px 4px brown;
-  border-color: brown;
+  box-shadow: 0px 2px 4px brown !important;
+  border-color: brown !important;
 }
 .second-place {
-  box-shadow: 0px 2px 4px silver;
-  border-color: silver;
+  box-shadow: 0px 2px 4px silver !important;
+  border-color: silver !important;
 }
 .second-place:hover,
 .third-place:hover {
@@ -85,6 +87,7 @@ body {
 }
 .footer {
   font-size: 12px;
+  color: #ffffff10;
 }
 
 ::-webkit-scrollbar {
