@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 body {
-  background-color: #333333;
+  background-color: #111010;
   color: white;
   font-family: "Open Sans", sans-serif;
 }
@@ -40,18 +40,20 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-color: #555555;
+  background-color: #272727;
   height: 25px;
   width: 700px;
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ffffff36;
   transition: ease-in-out 0.2s !important;
 }
 .leaderboard-row:hover {
   scale: 1.02;
 }
 .first-place {
+  border-color: gold;
   scale: 1.03;
 }
 .first-place:hover {
@@ -61,7 +63,12 @@ body {
 .third-place {
   scale: 1.02;
 }
-
+.third-place {
+  border-color: brown;
+}
+.second-place {
+  border-color: silver;
+}
 .second-place:hover,
 .third-place:hover {
   scale: 1.04;
