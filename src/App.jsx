@@ -5,10 +5,17 @@ function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
 
   useEffect(() => {
-    fetch('https://aws.pandadex.ml/leaderboard-data')
-      .then(response => response.json())
-      .then(data => setLeaderboardData(data))
-      .catch(error => console.error(error));
+    const fetchLeaderboardData = () => {
+      fetch('https://aws.pandadex.ml/leaderboard-data')
+        .then(response => response.json())
+        .then(data => setLeaderboardData(data))
+        .catch(error => console.error(error));
+    };
+
+    const intervalId = setInterval(fetchLeaderboardData, 15000);
+
+    fetchLeaderboardData();
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -38,4 +45,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
