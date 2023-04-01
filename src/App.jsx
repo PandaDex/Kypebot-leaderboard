@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import dotenv from 'dotenv';
 import './App.css'
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const api_key = process.env.api_key;
 
   useEffect(() => {
     const fetchLeaderboardData = () => {
-      fetch('https://aws.pandadex.ml/leaderboard-data')
+      fetch(`https://aws.pandadex.ml/leaderboard-data?api_key=${api_key}`)
         .then(response => response.json())
         .then(data => setLeaderboardData(data))
         .catch(error => console.error(error));
