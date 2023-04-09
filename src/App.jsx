@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     const fetchLeaderboardData = () => {
-      fetch(`https://aws.pandadex.ml/leaderboard-data`)
+      fetch(`https://api.kypebot.xyz/leaderboard-data`)
         .then(response => response.json())
         .then(data => setLeaderboardData(data))
         .catch(error => console.error(error));
