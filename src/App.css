@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
 body {
   background-color: #111010;
   color: white;
   font-family: "Open Sans", sans-serif;
 }
+
 .leaderboard {
   display: flex;
   flex-direction: column;
@@ -11,6 +13,7 @@ body {
   align-items: center;
   align-content: center;
 }
+
 .header {
   width: 420px;
   text-align: center;
@@ -47,33 +50,40 @@ body {
   border-radius: 5px;
   box-shadow: 0px 2px 4px #ffffff15;
   border: 2px solid #ffffff36;
-  transition: ease-in-out 0.2s !important;
+  transition: ease-out 0.2s !important;
 }
+
 .leaderboard-row:hover {
   scale: 1.02;
   border-color: #346bcf;
   box-shadow: 0px 2px 4px #346bcf;
 }
+
 .first-place {
   border-color: gold !important;
   box-shadow: 0px 2px 4px gold !important;
   scale: 1.03;
 }
+
 .first-place:hover {
   scale: 1.05;
 }
+
 .second-place,
 .third-place {
   scale: 1.02;
 }
+
 .third-place {
   box-shadow: 0px 2px 4px brown !important;
   border-color: brown !important;
 }
+
 .second-place {
   box-shadow: 0px 2px 4px silver !important;
   border-color: silver !important;
 }
+
 .second-place:hover,
 .third-place:hover {
   scale: 1.04;
@@ -85,11 +95,50 @@ body {
   width: 100%;
   text-align: center;
 }
+
 .footer {
   font-size: 12px;
-  color: #ffffff10;
+  color: #ffffff41;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+
+.Discord {
+  scale: 0.25;
+  margin: -22px;
+  padding: 0px;
+}
+
+.leaderboard-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff5e;
+  text-decoration: inherit;
+  transition: ease-out 0.2s;
+}
+
+a:hover {
+  color: #535bf2b0;
 }
