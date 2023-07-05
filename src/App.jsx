@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
 function App() {
@@ -9,7 +11,11 @@ function App() {
       fetch(`https://api.kypebot.xyz:2135/leaderboard-data`)
         .then(response => response.json())
         .then(data => setLeaderboardData(data))
-        .catch(error => console.error(error));
+        .catch(error => {
+          toast.error(`Can't retrieve data from API`, {
+            toastId: 'chuj'
+          })
+        });
     };
 
     const intervalId = setInterval(fetchLeaderboardData, 15000);
@@ -19,7 +25,18 @@ function App() {
   }, []);
 
   return (
-    <div className="leaderboard scrollbar">
+    <div className="leaderboard">
+      <ToastContainer
+        position="top-right"
+        autoClose={15000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        theme="dark"
+      />
       <div className="top">
         <div>Miejsce</div>
         <div className="header">Nick</div>
