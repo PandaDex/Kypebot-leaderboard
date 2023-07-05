@@ -56,9 +56,7 @@ function App() {
             <div className="leaderboard-points">{row.points.toLocaleString()}</div>
           </div>
         ))}
-        <div>
-          <p className="footer">Powered by <a href='https://kypebot.xyz'>Kype</a></p>
-        </div>
+        <p className="footer">Powered by <a href='https://kypebot.xyz'>Kype</a></p>
       </div>
     </div>
   );
