@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
-
+  const version = __APP_VERSION__;
   useEffect(() => {
     const fetchLeaderboardData = () => {
       fetch(`https://api.kypebot.xyz:2135/leaderboard-data`)
@@ -33,6 +33,7 @@ function App() {
         newestOnTop={false}
         closeOnClick
         rtl={false}
+        pauseOnHover={false}
         pauseOnFocusLoss={false}
         draggable={false}
         theme="dark"
@@ -47,6 +48,7 @@ function App() {
           <div
             className={`leaderboard-row ${index === 0 ? 'first-place' : index === 1 ? 'second-place' : index === 2 ? 'third-place' : ''}`}
             key={index}
+            title={row.username}
           >
             <div className="leaderboard-rank">{index + 1}</div>
             <div className="leaderboard-name">
@@ -57,6 +59,7 @@ function App() {
           </div>
         ))}
         <p className="footer">Powered by <a href='https://kypebot.xyz'>Kype</a></p>
+        <p className="version">Build: {version}</p>
       </div>
     </div>
   );

@@ -15,6 +15,24 @@ body {
   user-select: none;
 }
 
+@media only screen and (max-width: 700px) {
+  .top {
+    width: 400px !important;
+  }
+
+  .body {
+    width: 400px !important;
+  }
+
+  .header {
+    width: 160px !important;
+  }
+
+  .leaderboard-row {
+    width: 300px !important;
+  }
+}
+
 .leaderboard {
   display: flex;
   flex-direction: column;
@@ -108,6 +126,13 @@ body {
 .footer {
   font-size: 12px;
   color: var(--fotter);
+}
+
+.version {
+  font-size: 8px;
+  color: var(--fotter);
+  margin: 0px !important;
+  padding: 0px;
 }
 
 ::-webkit-scrollbar-track {
