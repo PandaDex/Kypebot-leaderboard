@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import './Leaderboard.css';
+import '../css/Leaderboard.css';
 
 function Leaderboard() {
     const fragment = window.location.hash;
@@ -13,7 +14,7 @@ function Leaderboard() {
 
     useEffect(() => {
         if (!channelName || channelName.length < 1) {
-            navigate('/#madkrakers');
+            navigate('/');
             return;
         }
 
@@ -27,7 +28,7 @@ function Leaderboard() {
                     return response.json();
                 })
                 .then((data) => {
-                    setLeaderboardData(data);
+                    setLeaderboardData(data.rows);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -46,6 +47,9 @@ function Leaderboard() {
 
     return (
         <div className="leaderboard">
+            <Helmet>
+                <title>{channelName} | Leaderboard</title>
+            </Helmet>
             <ToastContainer
                 position="top-right"
                 autoClose={15000}
