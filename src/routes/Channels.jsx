@@ -13,7 +13,7 @@ function Channels() {
         fetchChannels();
         setInterval(() => {
             fetchChannels();
-        }, 50000);
+        }, 15000);
     }, []);
 
     const fetchChannels = async () => {
