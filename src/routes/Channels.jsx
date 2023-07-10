@@ -60,7 +60,7 @@ function Channels() {
                     </div>
                 ))}
             </div>
-            <p className="p404-version">Build: {version}</p>z
+            <p className="p404-version">Build: {version}</p>
         </div>
     );
 }
