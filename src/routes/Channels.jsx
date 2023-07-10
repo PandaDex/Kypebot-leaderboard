@@ -6,26 +6,25 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../css/Channels.css';
 
 function Channels() {
-    const [rowCount, setRowCount] = useState(0);
     const version = __APP_VERSION__;
+    const [channels, setChannels] = useState([]);
+
     useEffect(() => {
-        const fetchLeaderboardData = () => {
-            fetch(`https://api.kypebot.xyz:2135/leaderboard-data?channel=madkrakers`)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    setRowCount(data.rowCount)
-                })
-                .catch((error) => {
-                    console.log(error);
-                    toast.error(`Can't retrieve data from API`, {
-                        toastId: 'chuj',
-                    });
-                });
-        };
-        fetchLeaderboardData();
+        fetchChannels();
+        setInterval(() => {
+            fetchChannels();
+        }, 50000);
     }, []);
+
+    const fetchChannels = async () => {
+        try {
+            const response = await fetch('https://api.kypebot.xyz:2135/channels');
+            const data = await response.json();
+            setChannels(data);
+        } catch (error) {
+            console.error('Error fetching channels:', error);
+        }
+    };
 
     return (
         <div className='channels-body'>
@@ -46,20 +45,22 @@ function Channels() {
             />
             <p className='current'>Current channels</p>
             <div className='channels-list'>
-                <div className='channel'>
-                    <img className='channel-icon' src='https://static-cdn.jtvnw.net/jtv_user_pictures/cc5fdb94-35e4-4b6a-8ad5-740184053925-profile_image-70x70.png' draggable='false' />
-                    <p className='channel-name'>MadKrakers</p>
-                    <div className='channel-stats'>
-                        <a className='channel-leaderboard' href='/top#madkrakers'>Leaderboard</a>
-                        <div className='channel-sep'></div>
-                        <div className='channel-total-users'>
-                            <img src='/ic_fluent_people_24_filled.svg' draggable='false' ></img>
-                            <p className='channel-total-user-count'>{rowCount}</p>
+                {Object.entries(channels).map(([channelName, channelData]) => (
+                    <div className='channel' key={channelName}>
+                        <img className='channel-icon' src={channelData.icon_url} draggable='false' />
+                        <p className='channel-name'>{channelName}</p>
+                        <div className='channel-stats'>
+                            <a className='channel-leaderboard' href={`/top#${channelName}`}>Leaderboard</a>
+                            <div className='channel-sep'></div>
+                            <div className='channel-total-users'>
+                                <img src='/ic_fluent_people_24_filled.svg' draggable='false' alt='people icon'></img>
+                                <p className='channel-total-user-count'>{channelData.users.toLocaleString()}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
-            <p className="p404-version">Build: {version}</p>
+            <p className="p404-version">Build: {version}</p>z
         </div>
     );
 }
