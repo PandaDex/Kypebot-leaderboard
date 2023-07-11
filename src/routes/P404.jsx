@@ -10,7 +10,9 @@ function P404() {
                 <title>404 | Kype</title>
             </Helmet>
             <p className='p404-big-text'>404</p>
-            <p className="p404-version">Build: {version}</p>
+            <div className="p404-version">
+                Build: {version}
+            </div>
         </div>
     )
 }

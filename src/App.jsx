@@ -9,6 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Channels />} />
+          <Route exact path="/channels" element={<Channels />} />
           <Route exact path="/top" element={<Leaderboard />} />
           <Route exact path="/404" element={<P404 />} />
         </Routes>

@@ -99,10 +99,6 @@ function Leaderboard() {
                         </div>
                     </div>
                 ))}
-                <p className="footer">
-                    Powered by <a href="https://kypebot.xyz">Kype</a>
-                </p>
-                <p className="version">Build: {version}</p>
             </div>
         </div>
     );
